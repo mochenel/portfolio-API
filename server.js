@@ -29,7 +29,6 @@ app.post('/send', (req, res) => {
     <h3>Message</h3>
     <p>${message}</p>
   `;
-  res.send(output)
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
     host: 'smtp.mailtrap.io',
