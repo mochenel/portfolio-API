@@ -35,7 +35,7 @@ app.post('/send', (req, res) => {
   let transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: true, // true for 465, false for other ports
     auth: {
         user: process.env.USERNAM, // generated ethereal user
         pass: process.env.PASSWORD  // generated ethereal password
