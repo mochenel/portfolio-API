@@ -17,7 +17,7 @@ app.get("/resume", (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-  console.log(process.env.USERNAM, process.env.PASSWORD)
+  console.log(process,"###########")
   const {name,email,tel,message}  = req.body
   const output = `
     <p>You have a new contact request</p>
