@@ -17,6 +17,7 @@ app.get("/resume", (req, res) => {
 });
 
 app.post('/send', (req, res) => {
+  console.log(process.env.USERNAM, process.env.PASSWORD)
   const {name,email,tel,message}  = req.body
   const output = `
     <p>You have a new contact request</p>
@@ -29,9 +30,10 @@ app.post('/send', (req, res) => {
     <h3>Message</h3>
     <p>${message}</p>
   `;
+  //res.send(output)
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
-    host: 'smtp.mailtrap.io',
+    host: 'smtp.gmail.com',
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
@@ -43,6 +45,7 @@ app.post('/send', (req, res) => {
     }
   });
 
+  
   // setup email data with unicode symbols
   let mailOptions = {
       from: email, // sender address
@@ -59,7 +62,7 @@ app.post('/send', (req, res) => {
 
       }
 
-      res.send("mail sent");
+      res.send("ok");
   });
   });
 
