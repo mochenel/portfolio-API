@@ -17,7 +17,6 @@ app.get("/resume", (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-  console.log(process,"###########")
   const {name,email,tel,message}  = req.body
   const output = `
     <p>You have a new contact request</p>
@@ -59,15 +58,9 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
       let response;
       if (error) {
-<<<<<<< HEAD
-        response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
-=======
-          console.log("* "+process.env.USERNAM);
-          console.log("* "+process.env.PASSWORD);
-          console.log("*** "+error);
-          res.send("An error occured,Please send an email to freddy980404@gmail.com");
 
->>>>>>> b3a546e4815babd29e1884baec3f22073b2cc7b5
+        response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
+
       }
       else{
         response = {"response":"ok"};
