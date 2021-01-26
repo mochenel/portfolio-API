@@ -58,7 +58,7 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
       let response;
       if (error) {
-
+         console.log(error);
         response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
 
       }
