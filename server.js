@@ -57,12 +57,15 @@ app.post('/send', (req, res) => {
 
   // send mail with defined transport object
   transporter.sendMail(mailOptions, (error, info) => {
+      let response;
       if (error) {
-          res.send("An error occured,Please send an email to freddy980404@gmail.com");
-
+        response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
       }
-
-      res.send("ok");
+      else{
+        response = {"response":"ok"};
+      }
+      
+      res.send(JSON.stringify(response));
   });
   });
 
