@@ -29,7 +29,7 @@ app.post('/send', (req, res) => {
     <h3>Message</h3>
     <p>${message}</p>
   `;
-     console.log("***",process);
+
   //res.send(output)
   // create reusable transporter object using the default SMTP transport
   let transporter = nodemailer.createTransport({
@@ -59,7 +59,7 @@ app.post('/send', (req, res) => {
   transporter.sendMail(mailOptions, (error, info) => {
       let response;
       if (error) {
-         console.log(error);
+
         response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
 
       }
