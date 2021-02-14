@@ -11,7 +11,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const resumePath = path.join(__dirname, 'public/resume/Freddy.pdf');
+const resumePath = path.join(__dirname, 'public/resume/mochene freddy lebogo(CV).pdf');
 app.get("/resume", (req, res) => {
     res.sendFile(resumePath)
 });
