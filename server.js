@@ -64,7 +64,7 @@ app.post('/send', (req, res) => {
 
       }
       else{
-        response = {"response":"Successfully sent an email"};
+        response = {"response":"ok"};
       }
       
       res.send(JSON.stringify(response));
