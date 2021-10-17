@@ -49,7 +49,7 @@ app.post('/send', (req, res) => {
   // setup email data with unicode symbols
   let mailOptions = {
       from: email, // sender address
-      to: 'freddy980404@gmail.com', // list of receivers
+      to: 'mochene.freddy@gmail.com', // list of receivers
       subject: 'Node Contact Request', // Subject line
       text: 'Portfolio Message', // plain text body
       html: output // html body
@@ -60,11 +60,11 @@ app.post('/send', (req, res) => {
       let response;
       if (error) {
 
-        response = {"response":"An error occured,Please send an email to freddy980404@gmail.com"};
+        response = {"response":"An error has occured,Please send an email to mochene.freddy@gmail.com"};
 
       }
       else{
-        response = {"response":"ok"};
+        response = {"response":"Successfully sent an email"};
       }
       
       res.send(JSON.stringify(response));
